@@ -19,18 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.almaraiTextTheme(Theme.of(context).textTheme),
         primaryColor: KPrimaryColor,
-        colorScheme: ColorScheme(
-            brightness: Brightness.light,
-            primary: KPrimaryColor,
-            onPrimary: KPrimaryColor,
-            secondary: KPrimaryColor,
-            onSecondary: KPrimaryColor,
-            error: KPrimaryColor,
-            onError: KPrimaryColor,
-            background: KPrimaryColor,
-            onBackground: KPrimaryColor,
-            surface: KPrimaryColor,
-            onSurface: KPrimaryColor),
+        colorScheme:
+            ColorScheme.fromSwatch().copyWith(secondary: KPrimaryColor),
       ),
       // Arabic RTL
       localizationsDelegates: [
@@ -38,6 +28,8 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
+      supportedLocales: [Locale("ar", "AE")],
+      locale: Locale("ar", "AE"),
       home: HomeScreen(),
     );
   }
