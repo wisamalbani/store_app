@@ -26,9 +26,15 @@ class HomeBody extends StatelessWidget {
                 ),
                 ListView.builder(
                   itemCount: 3,
-                  itemBuilder: (context, index) => ProductCard(),
+                  itemBuilder: (context, index) => ProductCard(
+                    itemIndex: null!,
+                    product: null!,
+                  ),
                 ),
-                ProductCard(),
+                ProductCard(
+                  itemIndex: null!,
+                  product: null!,
+                ),
               ],
             ),
           ),
